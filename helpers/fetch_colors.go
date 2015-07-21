@@ -1,7 +1,7 @@
 package helpers
 
 import (
-	"github.com/pivotal-cf-experimental/lattice-app/structs"
+	"github.com/aripka-pivotal/lattice-app/structs"
 )
 
 func FetchColors()[]structs.RGB {

@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"text/template"
-	"github.com/pivotal-cf-experimental/lattice-app/structs"
+	"github.com/aripka-pivotal/lattice-app/structs"
 )
 
 var styledColoredTemplate = template.Must(template.New("c_experiment").Parse(`

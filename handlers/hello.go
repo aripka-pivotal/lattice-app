@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/pivotal-cf-experimental/lattice-app/helpers"
+	"github.com/aripka-pivotal/lattice-app/helpers"
 )
 
 type Hello struct {
@@ -14,10 +14,12 @@ type Hello struct {
 
 func (p *Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	index, _ := helpers.FetchIndex()
+	appName := "APP 1"
+	colors := helpers.FetchColors()
 
-	styledTemplate.Execute(w, Body{Body: fmt.Sprintf(`
+	styledColoredTemplate.Execute(w, ColoredBody{Body: fmt.Sprintf(`
 <div class="hello">
-	Lattice
+	ALattice - %s
 </div>
 
 <div class="my-index">My Index Is</div>
@@ -25,5 +27,5 @@ func (p *Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 <div class="index">%d</div>
 <div class="mid-color">Uptime: %s</div>
 <div class="bottom-color"></div>
-    `, index, time.Since(p.Time))})
+    `, appName, index, time.Since(p.Time)), Colors:colors})
 }

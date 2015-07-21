@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/pivotal-cf-experimental/lattice-app/routes"
+	"github.com/aripka-pivotal/lattice-app/routes"
 	"github.com/pivotal-golang/lager"
 	"github.com/tedsuo/rata"
 )
