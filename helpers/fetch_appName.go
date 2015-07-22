@@ -2,6 +2,7 @@ package helpers
 
 import(
 	"os"
+	"encoding/json"
 )
 
 func FetchAppName() string {
@@ -11,7 +12,15 @@ func FetchAppName() string {
 		//get the app name from lattice name
 		appName = os.Getenv("PROCESS_GUID")
 		if appName == "" {
-                	return "Lattice-app"
+			vcapStr := os.Getenv("VCAP_APPLICATION")
+			var vcapMap map[string]string
+
+			json.Unmarshal([]byte(vcapStr), &vcapMap)
+
+			appName = vcapMap["application_name"]
+			if appName == "" {	
+                		return "Lattice-app"
+			}
 		}
         }
         return appName
