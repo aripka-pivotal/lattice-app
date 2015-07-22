@@ -44,7 +44,8 @@ func main() {
 	}
 
 	index, err := helpers.FetchIndex()
-	appName := fetchAppName()
+	appName := helpers.FetchAppName()
+
 	go func() {
 		t := time.NewTicker(time.Second)
 		for {
@@ -66,10 +67,3 @@ func main() {
 	logger.Info("farewell")
 }
 
-func fetchAppName() string {
-	appName := os.Getenv("APP_NAME")
-	if appName == "" {
-		return "Lattice-app"
-	}
-	return appName
-}
