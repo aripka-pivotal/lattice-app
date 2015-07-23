@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"text/template"
-	"github.com/aripka-pivotal/lattice-app/structs"
 )
 
 var styledColoredTemplate = template.Must(template.New("c_experiment").Parse(`
@@ -37,7 +36,7 @@ dt {
   font-size:80px;
   font-weight:bold;
   line-height:120px;
-  color: rgb({{ (index .Colors 0).Red}},{{(index .Colors 0).Green}},{{(index .Colors 0).Blue}});
+  color: {{index .Colors 0 }};
 }
 
 .my-index {
@@ -50,7 +49,7 @@ dt {
   left:0;
   right:0;
   text-align:center;
-  color: rgb({{ (index .Colors 1).Red}},{{(index .Colors 1).Green}},{{(index .Colors 1).Blue}});
+  color: {{index .Colors 1}};
 }
 
 .index {
@@ -62,7 +61,7 @@ dt {
   color: #fff;
   font-size: 80px;
   line-height: 120px;
-  background-color:rgb({{ (index .Colors 2).Red}},{{(index .Colors 2).Green}},{{(index .Colors 2).Blue}});
+  background-color:{{index .Colors 2}}; 
   text-align:center;
 }
 
@@ -75,7 +74,7 @@ dt {
   color: #fff;
   font-size: 30px;
   line-height: 120px;
-  background-color: rgb({{ (index .Colors 1).Red}},{{(index .Colors 1).Green}},{{(index .Colors 1).Blue}});
+  background-color:{{index .Colors 1}}; 
   text-align: center;
 }
 
@@ -85,7 +84,7 @@ dt {
   bottom:0;
   left:0;
   right:0;
-  background-color: rgb({{ (index .Colors 0).Red}},{{(index .Colors 0).Green}},{{(index .Colors 0).Blue}});
+  background-color:{{index .Colors 0}}; 
 }
 
 
@@ -100,6 +99,6 @@ dt {
 type ColoredBody struct {
 	Body  string
 	Class string
-	Colors []structs.RGB
+	Colors []string
 }
 

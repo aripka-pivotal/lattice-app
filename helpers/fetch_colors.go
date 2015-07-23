@@ -1,13 +1,9 @@
 package helpers
 
-import (
-	"github.com/aripka-pivotal/lattice-app/structs"
-)
-
-func FetchColors()[]structs.RGB {
-	colors := make([]structs.RGB, 333)
-        colors[0] = structs.RGB{ Red: `75`, Green: `0`, Blue: `130`}
-        colors[1] = structs.RGB{ Red: `75`, Green: `12`, Blue: `143`}
-        colors[2] = structs.RGB{ Red: `111`, Green: `45`, Blue: `180`}
+func FetchColors()[]string{
+	colors := make([]string, 3)
+        colors[0] = "#4b0082" 
+        colors[1] = "#4b0c8f"
+        colors[2] = "#6f29b4"
 	return colors
 }
