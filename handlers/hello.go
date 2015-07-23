@@ -14,12 +14,18 @@ type Hello struct {
 
 func (p *Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	index, _ := helpers.FetchIndex()
-	appName := "APP 1"
+	appName := helpers.FetchAppName();
+	if appName == "Lattice-app" {
+	 	appName = ""
+	}else{
+		appName = " - " + appName
+	}
+
 	colors := helpers.FetchColors()
 
 	styledColoredTemplate.Execute(w, ColoredBody{Body: fmt.Sprintf(`
 <div class="hello">
-	ALattice - %s
+	Lattice%s
 </div>
 
 <div class="my-index">My Index Is</div>
