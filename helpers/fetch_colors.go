@@ -6,11 +6,18 @@ import (
 	"os"
 )
 
+const defaultColor = "008bb9"
+
 var adjustments = [][]int64 {{0,0,0},{0,12,13},{36,45,50}}
 
 func FetchColors()[]string{
 
 	colorString := os.Getenv("HEX_COLOR")
+
+        if colorString == "" {
+		fmt.Println("No color set using default")
+                colorString = defaultColor
+        }
 
 	colors, err := parseColorString(colorString)
 	
