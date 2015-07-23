@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"os"
+	"strings"
 )
 
 const defaultColor = "008bb9"
@@ -17,7 +18,11 @@ func FetchColors()[]string{
         if colorString == "" {
 		fmt.Println("No color set using default")
                 colorString = defaultColor
-        }
+        }else if strings.ToLower(colorString) == "ffffff"{
+		fmt.Println("No color set to white not valid using default")
+                colorString = defaultColor
+
+	}
 
 	colors, err := parseColorString(colorString)
 	
