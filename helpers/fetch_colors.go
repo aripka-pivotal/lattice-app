@@ -11,7 +11,9 @@ const defaultColor = "008bb9"
 
 var adjustments = [][]int64 {{0,0,0},{0,12,13},{36,45,50}}
 
-func FetchColors()[]string{
+var colorHexStrings []string
+
+func init(){
 
 	colorString := os.Getenv("HEX_COLOR")
 
@@ -47,7 +49,10 @@ func FetchColors()[]string{
 	  colors[2] = 205
 	} 
 
-	colorHexStrings := createColorScheme(colors)
+	colorHexStrings = createColorScheme(colors)
+}
+
+func FetchColors()[]string{
 	
 	return colorHexStrings
 }
