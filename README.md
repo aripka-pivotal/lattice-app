@@ -14,6 +14,7 @@ This application will include the lattice/cloud foundry app name in the logging 
 ###Environment Variables to Customize Appearance
 This application supports customization of the color scheme by supplying on of the following environment variables:
 HEX_COLOR - hexidecimal representation of the RGB color value.  If an invalid value(including white) is supplied the default color will be used. 
+
 COLOR_INDX - integer value representing one of 20 preset color values (indexes outside this range will use the default value).
 
 ### Endpoints
