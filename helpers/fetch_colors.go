@@ -22,7 +22,7 @@ func init(){
 	colorString := os.Getenv("HEX_COLOR")
 
         if colorString == "" {
-		colorString = os.Getenv("COLOR_INDX")
+		colorString = os.Getenv("COLOR_NUM")
 		if colorString != "" {
 			colorIndex, indexErr := strconv.ParseInt(colorString,10,0) 
 			if indexErr != nil || colorIndex > int64(len(predefinedColors))  {
