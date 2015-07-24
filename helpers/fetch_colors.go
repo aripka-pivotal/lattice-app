@@ -7,11 +7,10 @@ import (
 	"strings"
 )
 
-const defaultColor = "008bb9"
 
 var adjustments = [][]int64 {{0,0,0},{0,12,13},{36,45,50}}
 
-var predefinedColors = []string {"FF00FF","FF0000","8B4513","FF8C00", "A9A9A9",
+var predefinedColors = []string {"008bb9", "FF00FF","FF0000","8B4513","FF8C00", "A9A9A9",
 	"FFFF00", "4B0082", "006400","808000","000000","800000",
 	"0000FF", "00008B","B8860B", "ADFF2F", "B0C4DE", "FF1493"}
 
@@ -27,19 +26,17 @@ func init(){
 			colorIndex, indexErr := strconv.ParseInt(colorString,10,0) 
 			if indexErr != nil || colorIndex > int64(len(predefinedColors))  {
 				fmt.Println("Invalid color index using default")
-				colorString = defaultColor
-			}else if colorIndex == 0 {
-				colorString = defaultColor
+				colorString = predefinedColors[0]
 			}else{
 				colorString = predefinedColors[colorIndex-1]
 			}
 		}else{
 			fmt.Println("No color set using default")
-                	colorString = defaultColor
+			colorString = predefinedColors[0]
 		}
         }else if strings.ToLower(colorString) == "ffffff"{
 		fmt.Println("No color set to white not valid using default")
-                colorString = defaultColor
+		colorString = predefinedColors[0]
 
 	}
 
@@ -48,7 +45,7 @@ func init(){
 	if err != nil {
 		fmt.Printf("Cannot parse string %s using default color scheme\n", colorString)
 
-		colors, err = parseColorString("008bb9")
+		colors, err = parseColorString(predefinedColors[0])
 	}else if colors[0] == 0 && colors[1] == 0 && colors[2] == 0 {
 		fmt.Printf("Color String set to Black")
 	}
