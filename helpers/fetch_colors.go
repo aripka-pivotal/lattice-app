@@ -24,7 +24,7 @@ func init(){
 		colorString = os.Getenv("COLOR_NUM")
 		if colorString != "" {
 			colorIndex, indexErr := strconv.ParseInt(colorString,10,0) 
-			if indexErr != nil || colorIndex > int64(len(predefinedColors))  {
+			if indexErr != nil || colorIndex < 0 || colorIndex > int64(len(predefinedColors))  {
 				fmt.Println("Invalid color index using default")
 				colorString = predefinedColors[0]
 			}else{
