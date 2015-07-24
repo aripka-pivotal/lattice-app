@@ -12,7 +12,7 @@ var adjustments = [][]int64 {{0,0,0},{0,12,13},{36,45,50}}
 
 var predefinedColors = []string {"008bb9", "FF00FF","FF0000","8B4513","FF8C00", "A9A9A9",
 	"FFFF00", "4B0082", "006400","808000","000000","800000",
-	"0000FF", "00008B","B8860B", "ADFF2F", "B0C4DE", "FF1493"}
+	"0000FF", "00008B","B8860B", "ADFF2F", "B0C4DE", "FF1493", "8FBC8F", "660000"}
 
 var colorHexStrings []string
 
