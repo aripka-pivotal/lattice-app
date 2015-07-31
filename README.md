@@ -1,11 +1,11 @@
-# Lattice-App - a simple Go webapp for playing with Lattice
+# Lattice-App - a simple Go webapp for playing with Lattice (Now with Colors)
 
-Lattice-App is packaged as a docker image at cloudfoundry/lattice-app
+This version of the Lattice-App is packaged as a docker image at rippmn/lattice-app
 
 To push to [Lattice](https://github.com/cloudfoundry-incubator/lattice) using [ltc](https://github.com/cloudfoundry-incubator/lattice/ltc):
 
 ```bash
-ltc create lattice-app cloudfoundry/lattice-app
+ltc create lattice-app rippmn/lattice-app
 ```
 
 ###Displayed Application Name
