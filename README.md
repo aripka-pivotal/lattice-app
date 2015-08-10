@@ -13,6 +13,7 @@ This application will include the lattice/cloud foundry app name in the logging 
 
 ###Environment Variables to Customize Appearance
 This application supports customization of the color scheme by supplying one of the following environment variables:
+* _INS_CLR_ - indicator to rotate through 20 preset color values per app instance (based upon index enviornment variable), for more than 20 instances, the color sequence starts over. (**When using this setting it is not possible to select starting color**)
 * _HEX_COLOR_ - hexidecimal representation of the RGB color value.  If an invalid value(including white) is supplied the default color will be used. 
 * _COLOR_NUM_ - integer value representing one of 20 preset color values (indexes outside this range will use the default colors).
 
