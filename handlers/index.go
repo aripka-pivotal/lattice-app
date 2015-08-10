@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/aripka-pivotal/lattice-app/helpers"
+	"github.com/pivotal-cf-experimental/lattice-app/helpers"
 )
 
 type Index struct {
