@@ -8,7 +8,7 @@ import (
 
 	"github.com/aripka-pivotal/lattice-app/handlers"
 	"github.com/aripka-pivotal/lattice-app/helpers"
-	"github.com/aripka-pivotal/lattice-app/routes"
+	"github.com/pivotal-cf-experimental/lattice-app/routes"
 	"github.com/pivotal-golang/lager"
 	"github.com/tedsuo/ifrit"
 	"github.com/tedsuo/ifrit/http_server"
