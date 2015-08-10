@@ -1,10 +1,18 @@
 {
 	"ImportPath": "github.com/aripka-pivotal/lattice-app",
-	"GoVersion": "go1.4.1",
+	"GoVersion": "go1.4.2",
 	"Deps": [
 		{
 			"ImportPath": "github.com/bmizerany/pat",
 			"Rev": "b8a35001b773c267eb260a691f4e5499a3531600"
+		},
+		{
+			"ImportPath": "github.com/pivotal-cf-experimental/lattice-app/helpers",
+			"Rev": "0029d6d911c4061d78c88f92b13688a28a8270aa"
+		},
+		{
+			"ImportPath": "github.com/pivotal-cf-experimental/lattice-app/routes",
+			"Rev": "0029d6d911c4061d78c88f92b13688a28a8270aa"
 		},
 		{
 			"ImportPath": "github.com/pivotal-golang/lager",
