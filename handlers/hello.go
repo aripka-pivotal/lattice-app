@@ -14,7 +14,7 @@ type Hello struct {
 
 func (p *Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	index, _ := helpers.FetchIndex()
-	appName := helpers.FetchAppName();
+	appName := helpers.FetchAppName()
 	if appName == "Lattice-app" {
 	 	appName = ""
 	}else{
