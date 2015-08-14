@@ -28,7 +28,9 @@ func init(){
 			clrIndex = 0
 		}
 		
-		clrIndex = clrIndex%len(predefinedColors)
+		for clrIndex > len(predefinedColors)-1{
+			clrIndex = clrIndex%len(predefinedColors)
+		}
 
 		colorString = predefinedColors[clrIndex]
 		//do some logic to deal with more indexes than in predefined
