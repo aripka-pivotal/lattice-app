@@ -18,25 +18,7 @@ var colorHexStrings []string
 
 func init(){
 
-	indexColor := os.Getenv("INS_CLR")
-
-	var colorString string
-
-	if indexColor != "" && indexColor =="true" {
-		clrIndex, err := FetchIndex()
-		if err != nil || clrIndex < 0 {
-			clrIndex = 0
-		}
-		
-		for clrIndex > len(predefinedColors)-1{
-			clrIndex = clrIndex%len(predefinedColors)
-		}
-
-		colorString = predefinedColors[clrIndex]
-		//do some logic to deal with more indexes than in predefined
-	}else{
-		colorString = os.Getenv("HEX_COLOR")
-	}
+	colorString := os.Getenv("HEX_COLOR")
 
         if colorString == "" {
 		colorString = os.Getenv("COLOR_NUM")
